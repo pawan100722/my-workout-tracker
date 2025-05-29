@@ -1,10 +1,20 @@
-.workout-title-container {
+.workout-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 20px;
+}
+
+.each-workout-container{
+  border-radius: 20px;
+  padding:8px;
+  cursor: pointer;
+}
+
+.each-workout-container:hover{
+  outline: 1px solid black;
 }
 
 .each-workout-title {
@@ -15,29 +25,37 @@
   height: 30px;
   text-align: center;
   font-size: 1.3rem;
-  cursor: pointer;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
   outline: none;
   border-radius: 10px;
   padding: 10px;
   transition: font-size 0.5s ease;
 }
 
-.each-workout-title:hover {
-  outline: 1px solid black;
-  font-size: 1.5rem;
+.each-workout-container:hover .each-workout-title {
+  /* outline: 1px solid black; */
+  /* font-size: 1.4rem; */
+}
+
+.each-workout-image{
+  /* width: 200px; */
+  height:150px;
 }
 
 /* each workout */
 
 .my-each-workout-container{
-  width: 90%;
-  margin: auto;
+  width: 90dvw;
+  margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap:15px;
+  justify-content: center;
+  /* gap:10px; */
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid black;
 }
 
@@ -45,16 +63,17 @@
 
 .my-each-workout-image{
   width: 200px;
-  height: 150px;
+  /* height: 150px; */
   border-radius: 20px;
 }
 
 .each-workout-other-details-container{
   flex-basis: 80%;
   display:flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap:50px;
+  gap:30px;
   padding: 20px;
 }
 
@@ -70,13 +89,19 @@
 }
 
 .my-each-workout-time-container{
-  width: 150px;
+  width: 20%;
   height:100px;
 }
 
 .my-each-workout-counts{
-  width:100px;
+  width:20%;
   height:100px;
+}
+
+.my-each-workout-counts span{
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 10px;
 }
 
 .each-workout-rep-detail{
@@ -88,6 +113,7 @@
 .each-workout-rep-container{
   display: flex;
   align-items: center;
+  width: 20%;
 }
 
 .custom-button{
@@ -122,6 +148,22 @@
   color:black;
   font-size: 1rem;
   padding:8px;
+}
+
+.my-each-workout-start-time, .my-each-workout-end-time{
+  font-size: 1rem;
+}
+
+
+.my-each-workout-start-time span, .my-each-workout-end-time span{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.my-each-workout-title{
+  width: 20%;
+  text-align: center;
+  font-size: 2rem;
 }
 
 /*---------------------------------------------*/

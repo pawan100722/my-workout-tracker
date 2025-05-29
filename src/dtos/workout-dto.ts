@@ -10,7 +10,7 @@ export interface MyWorkoutDto {
   workoutEndTime: string[]|string;
   workoutTitle: string;
   workoutImage: string;
-  workoutReps: number;
-  workoutSets: number;
+  workoutRepsCount: number;
+  workoutSetsCount: number;
   reps:number
 }

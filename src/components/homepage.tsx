@@ -10,8 +10,8 @@ const initialMyWorkout: MyWorkoutDto = {
   workoutEndTime: new Date().toString().split(" ").slice(0, 5),
   workoutTitle: "Demo Workout",
   workoutImage: defaultImage,
-  workoutReps: 0,
-  workoutSets: 0,
+  workoutRepsCount: 0,
+  workoutSetsCount: 0,
   reps: 10,
 };
 
@@ -45,6 +45,11 @@ export const Homepage = () => {
     }
   };
 
+  /**
+   * it increases or decreases the rep count for each workout
+   * @param isIncreaseParam
+   * @param idParam
+   */
   const handleRepChange = (isIncreaseParam: boolean, idParam: string) => {
     const updatedWorkout = [...myWorkoutList];
     const workoutIndex = updatedWorkout.findIndex((w) => w.id === idParam);
@@ -63,77 +68,99 @@ export const Homepage = () => {
     setMyWorkoutList(updatedWorkout);
   };
 
+  /**
+   * it adds the reps to the rep counter
+   * @param idParam
+   */
+  const handleAddReps = (idParam: string) => {
+    const updatedWorkoutList: MyWorkoutDto[] = [...myWorkoutList];
+    const index = updatedWorkoutList.findIndex((w) => w.id === idParam);
+    if (index > -1) {
+      updatedWorkoutList[index].workoutRepsCount +=
+        updatedWorkoutList[index].reps;
+      updatedWorkoutList[index].workoutSetsCount =
+        updatedWorkoutList[index].workoutSetsCount + 1;
+      updatedWorkoutList[index].reps = 10;
+      setMyWorkoutList(updatedWorkoutList);
+    }
+  };
+
   return (
     <div className="homepage-container">
-      <div className="workout-title-container">
+      <div className="workout-container">
         {data.map((workout, index) => (
           <div
-            onClick={() => handleWorkoutCategoryClick(workout)}
-            className="each-workout-title"
+            className="each-workout-container"
             key={`${workout.id}-${index}`}
+            onClick={() => handleWorkoutCategoryClick(workout)}
           >
-            {workout.title}
+            <img src={workout?.image} alt="" className="each-workout-image" />
+            <div className="each-workout-title">{workout.title}</div>
           </div>
         ))}
       </div>
       <div className="my-workout-container">
-        {myWorkoutList.map((myWorkout, index) => (
-          <div
-            className="my-each-workout-container"
-            key={`${myWorkout?.workoutTitle}-${index}`}
-          >
-            <img
-              src={myWorkout?.workoutImage}
-              alt=""
-              className="my-each-workout-image"
-            />
-            <div className="each-workout-other-details-container">
-              <h1 className="my-each-workout-title">
-                {myWorkout?.workoutTitle}
-              </h1>
-              <div className="my-each-workout-time-container workout-detail">
-                <p className="my-each-workout-start-time">
-                  Starts at: {myWorkout?.workoutStartTime[4]}
-                </p>
-                <p className="my-each-workout-end-time">
-                  Ends at:{" "}
-                  {Array.isArray(myWorkout?.workoutEndTime)
-                    ? myWorkout?.workoutEndTime[4]
-                    : myWorkout?.workoutEndTime}
-                </p>
-                {/* <div className="each-workout-duration">{}</div> */}
-              </div>
-              <div className="my-each-workout-counts workout-detail">
-                <p className="my-each-workout-reps">
-                  Reps:<span>{myWorkout?.workoutReps}</span>
-                </p>
-                <p className="my-each-workout-sets">
-                  Sets:<span>{myWorkout?.workoutSets}</span>
-                </p>
-              </div>
-              <div className="each-workout-rep-container">
-                <p className="each-workout-rep-detail">{myWorkout?.reps}</p>
-                <div className="each-workout-rep-buttons-container">
-                  <button
-                    className="each-workout-rep-increase custom-button"
-                    onClick={() => handleRepChange(true, myWorkout.id)}
-                  >
-                    +
-                  </button>
-                  <button
-                    className="each-workout-rep-decrease custom-button"
-                    onClick={() => handleRepChange(false, myWorkout.id)}
-                  >
-                    -
-                  </button>
+        {myWorkoutList.map((myWorkout, index) => {
+          if (index > 0) {
+            return (
+              <div
+                className="my-each-workout-container"
+                key={`${myWorkout?.workoutTitle}-${index}`}
+              >
+                <img
+                  src={myWorkout?.workoutImage}
+                  alt=""
+                  className="my-each-workout-image"
+                />
+                <div className="each-workout-other-details-container">
+                  <h1 className="my-each-workout-title">
+                    {myWorkout?.workoutTitle}
+                  </h1>
+                  <div className="my-each-workout-time-container workout-detail">
+                    <p className="my-each-workout-start-time">
+                      Starts at: <span>{myWorkout?.workoutStartTime[4]}</span>
+                    </p>
+                    {/* <p className="my-each-workout-end-time">
+                      Ends at: <span>{myWorkout?.workoutStartTime[4]}</span>
+                    </p> */}
+                    {/* <div className="each-workout-duration">{}</div> */}
+                  </div>
+                  <div className="my-each-workout-counts workout-detail">
+                    <p className="my-each-workout-reps">
+                      Total Reps:<span>{myWorkout?.workoutRepsCount}</span>
+                    </p>
+                    <p className="my-each-workout-sets">
+                      Total Sets:<span>{myWorkout?.workoutSetsCount}</span>
+                    </p>
+                  </div>
+                  <div className="each-workout-rep-container">
+                    <p className="each-workout-rep-detail">{myWorkout?.reps}</p>
+                    <div className="each-workout-rep-buttons-container">
+                      <button
+                        className="each-workout-rep-increase custom-button"
+                        onClick={() => handleRepChange(true, myWorkout.id)}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="each-workout-rep-decrease custom-button"
+                        onClick={() => handleRepChange(false, myWorkout.id)}
+                      >
+                        -
+                      </button>
+                    </div>
+                    <button
+                      className="each-workout-rep-add custom-button"
+                      onClick={() => handleAddReps(myWorkout?.id)}
+                    >
+                      Add Reps
+                    </button>
+                  </div>
                 </div>
-                <button className="each-workout-rep-add custom-button">
-                  Add Reps
-                </button>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          }
+        })}
       </div>
     </div>
   );
