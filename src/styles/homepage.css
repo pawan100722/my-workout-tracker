@@ -1,0 +1,128 @@
+.workout-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.each-workout-title {
+  /* width: 150px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  transition: font-size 0.5s ease;
+}
+
+.each-workout-title:hover {
+  outline: 1px solid black;
+  font-size: 1.5rem;
+}
+
+/* each workout */
+
+.my-each-workout-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap:15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+
+.my-each-workout-image{
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.each-workout-other-details-container{
+  flex-basis: 80%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:50px;
+  padding: 20px;
+}
+
+.workout-detail{
+  border:1px solid black;
+  border-radius: 10px;
+  padding:10px;
+  display: flex;
+  gap:10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-each-workout-time-container{
+  width: 150px;
+  height:100px;
+}
+
+.my-each-workout-counts{
+  width:100px;
+  height:100px;
+}
+
+.each-workout-rep-detail{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+.each-workout-rep-container{
+  display: flex;
+  align-items: center;
+}
+
+.custom-button{
+  margin:10px;
+  width:50px;
+  padding: 5px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-size: 1.5rem;
+  color: white;
+  transition: background-color 0.5s linear, color 0.5 linear;
+}
+
+.custom-button:active{
+  background-color: white;
+  color:black;
+}
+
+.each-workout-rep-increase{
+  background-color: green;
+}
+
+.each-workout-rep-decrease{
+  background-color: red;
+}
+
+
+
+.each-workout-rep-add{
+  width:100%;
+  color:black;
+  font-size: 1rem;
+  padding:8px;
+}
+
+/*---------------------------------------------*/
+
