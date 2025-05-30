@@ -2,11 +2,49 @@ import '../styles/my-workout.css';
 import { MyWorkoutPropsDTO } from "../dtos/component-dto";
 import { MyWorkoutDto } from "../dtos/workout-dto";
 
-export const MyWorkout =({myWorkoutList, handleRepChange, handleAddReps}:MyWorkoutPropsDTO)=>{
-  
+export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO) => {
+  /**
+   * it increases or decreases the rep count for each workout
+   * @param isIncreaseParam
+   * @param idParam
+   */
+  const handleRepChange = (isIncreaseParam: boolean, idParam: string) => {
+    const updatedWorkout = [...myWorkoutList];
+    const workoutIndex = updatedWorkout.findIndex((w) => w.id === idParam);
+    if (workoutIndex > -1) {
+      if (isIncreaseParam) {
+        updatedWorkout[workoutIndex].reps =
+          updatedWorkout[workoutIndex].reps + 1;
+      } else {
+        if (updatedWorkout[workoutIndex].reps > 1) {
+          updatedWorkout[workoutIndex].reps =
+            myWorkoutList[workoutIndex].reps - 1;
+        }
+      }
+    }
+    setMyWorkoutList(updatedWorkout);
+  };
+
+  /**
+   * it adds the reps to the rep counter
+   * @param idParam
+   */
+  const handleAddReps = (idParam: string) => {
+    const updatedWorkoutList: MyWorkoutDto[] = [...myWorkoutList];
+    const index = updatedWorkoutList.findIndex((w) => w.id === idParam);
+    if (index > -1) {
+      updatedWorkoutList[index].workoutRepsCount +=
+        updatedWorkoutList[index].reps;
+      updatedWorkoutList[index].workoutSetsCount =
+        updatedWorkoutList[index].workoutSetsCount + 1;
+      updatedWorkoutList[index].reps = 10;
+      setMyWorkoutList(updatedWorkoutList);
+    }
+  };
+
   return (
     <div className="my-workout-container">
-      {myWorkoutList.map((myWorkout:MyWorkoutDto, index:number) => {
+      {myWorkoutList.map((myWorkout: MyWorkoutDto, index: number) => {
         if (index > 0) {
           return (
             <div
@@ -69,4 +107,4 @@ export const MyWorkout =({myWorkoutList, handleRepChange, handleAddReps}:MyWorko
       })}
     </div>
   );
-}
+};
