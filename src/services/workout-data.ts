@@ -1,9 +1,9 @@
 // import defaultWorkoutImg from '../images/default-workout.jpg';
-import pushupImg from '../images/push-up.jpg';
-import inclinePushup from '../images/incline-pushup.jpg';
-import declinePushup from '../images/decline-pushup.jpg';
-import bodyWeightSquatImg from '../images/bodyweight-squat.png';
-import dumbellBicepCurlImg from '../images/dumbell-bicep-curl.webp';
+import pushupImg from '../images/workout/chest/push-up.jpg';
+import inclinePushupImg from '../images/workout/chest/incline-pushup.jpg';
+import declinePushupImg from '../images/workout/chest/decline-pushup.jpg';
+import bodyWeightSquatImg from '../images/workout/bodyweight-squat.png';
+import dumbellBicepCurlImg from '../images/workout/dumbell-bicep-curl.webp';
 
 export const WORKOUT_DATA = [
   {
@@ -19,15 +19,15 @@ export const WORKOUT_DATA = [
   {
     id: 3,
     title: "Incline Pushup",
-    image: inclinePushup,
+    image: inclinePushupImg,
   },
   {
     id: 4,
     title: "Decline Pushup",
-    image: declinePushup,
+    image: declinePushupImg,
   },
   {
-    id:5,
+    id: 5,
     title: "Dumbell Bicep Curl",
     image: dumbellBicepCurlImg,
   },

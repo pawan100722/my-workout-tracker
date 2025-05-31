@@ -1,0 +1,6 @@
+.homepage-container{
+  background-image: url('../images//homepage_background.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100dvh;
+}

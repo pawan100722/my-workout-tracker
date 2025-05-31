@@ -11,20 +11,24 @@
   border-radius: 20px;
   padding: 8px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .each-workout-container:hover {
-  outline: 1px solid black;
+  outline: 1px solid white;
 }
 
 .each-workout-title {
-  /* width: 150px; */
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
