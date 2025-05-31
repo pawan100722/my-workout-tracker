@@ -13,4 +13,5 @@ export const CONSTANT = {
     workoutSetsCount: 0,
     reps: 10,
   },
+  MY_WORKOUT:'my_workout',
 };

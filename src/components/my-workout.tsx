@@ -1,8 +1,13 @@
 import '../styles/my-workout.css';
 import { MyWorkoutPropsDTO } from "../dtos/component-dto";
 import { MyWorkoutDto } from "../dtos/workout-dto";
+import { getLocallySavedData, saveDataLocally } from '../services/local-storage';
+import { CONSTANT } from '../services/CONSTANTS';
 
 export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO) => {
+  
+  
+  
   /**
    * it increases or decreases the rep count for each workout
    * @param isIncreaseParam
@@ -26,7 +31,8 @@ export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO
   };
 
   /**
-   * it adds the reps to the rep counter
+   * it adds the reps to the current workout 
+   * it also increases the set
    * @param idParam
    */
   const handleAddReps = (idParam: string) => {
@@ -39,8 +45,33 @@ export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO
         updatedWorkoutList[index].workoutSetsCount + 1;
       updatedWorkoutList[index].reps = 10;
       setMyWorkoutList(updatedWorkoutList);
+      saveData();
     }
   };
+
+
+  /**
+   * It saves workout data
+   */
+  const saveData=()=>{
+    const dateArr = new Date().toString().split(" ").slice(0, 5);
+    const key = `${dateArr[0]}, ${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`;
+    //Here removing item at 0th index, as it will be the default initial object
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [item1, ...restData] = myWorkoutList;
+    const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT);
+    if(!previousSavedData){
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const item: any = {};
+      item[key] = [...restData];
+      saveDataLocally(CONSTANT.MY_WORKOUT, item);
+    } else{
+      const updatedData = {...previousSavedData}
+      updatedData[key] =[...restData];
+      saveDataLocally(CONSTANT.MY_WORKOUT, updatedData)
+    }
+    
+  }
 
   return (
     <div className="my-workout-container">
