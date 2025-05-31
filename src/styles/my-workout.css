@@ -19,7 +19,7 @@
 
 
 .my-each-workout-container{
-  width: 90dvw;
+  width: 85%;
   margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
@@ -76,25 +76,32 @@
 
 
 .my-each-workout-start-time span, .my-each-workout-end-time span{
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: rgb(159, 159, 255);
 }
 
 .my-each-workout-counts{
   width:20%;
   height:100px;
+  color: burlywood;
 }
 
 .my-each-workout-counts span{
   font-size: 1.3rem;
   font-weight: bolder;
   margin: 10px;
+  background-color: black;
+  color: white;
+  border-radius:20px;
+  padding:2px;
 }
 
 .each-workout-rep-container{
   display: flex;
   align-items: center;
-  width: 25%;
+  width: 30%;
+  gap:10px;
 }
 
 .each-workout-rep-detail{

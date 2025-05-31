@@ -4,6 +4,7 @@ import { MyWorkout } from "./my-workout.tsx";
 import { CONSTANT } from "../services/CONSTANTS.ts";
 import { WorkoutCategory } from "./workout-category.tsx";
 import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto.ts";
+import { Navbar } from "./navbar.tsx";
 
 
 
@@ -20,6 +21,7 @@ export const Homepage = () => {
 
   return (
     <div className="homepage-container">
+      <Navbar/>
       <WorkoutCategory data={data} myWorkoutList={myWorkoutList} setMyWorkoutList={setMyWorkoutList}/>
 
       <MyWorkout myWorkoutList={myWorkoutList} setMyWorkoutList={setMyWorkoutList}/>
