@@ -1,3 +1,4 @@
+import NavbarRoutes from '../routes/navbar-routes';
 import '../styles/navbar.css';
 
 export const Navbar=()=>{
@@ -15,6 +16,7 @@ export const Navbar=()=>{
           </a>
         </li>
       </ul>
+      <NavbarRoutes/>
     </div>
   );
 }
