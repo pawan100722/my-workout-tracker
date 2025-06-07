@@ -12,7 +12,7 @@ export const HomeComponent = () => {
   ]);
 
   return (
-    <div className="homepage-container">
+    <div className="homepage-container right-page">
       <WorkoutCategory
         data={data}
         myWorkoutList={myWorkoutList}

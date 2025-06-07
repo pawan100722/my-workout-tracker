@@ -4,3 +4,10 @@
   box-sizing: border-box;
 }
 
+.right-page{
+  width:80%;
+  position: relative;
+  left:20%;
+  top: 35px;
+}
+
