@@ -4,6 +4,7 @@ import { MyWorkout } from "./my-workout.tsx";
 import { CONSTANT } from "../services/CONSTANTS.ts";
 import { WorkoutCategory } from "./workout-category.tsx";
 import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto.ts";
+import { SideBarComponent } from "./sidebar-component.tsx";
 
 export const HomeComponent = () => {
   const [data] = useState<WorkoutDataDto[]>(CONSTANT.data);
@@ -13,6 +14,7 @@ export const HomeComponent = () => {
 
   return (
     <div className="homepage-container right-page">
+      <SideBarComponent/>
       <WorkoutCategory
         data={data}
         myWorkoutList={myWorkoutList}

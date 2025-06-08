@@ -4,5 +4,8 @@
   background-repeat: repeat;
   min-height: 100dvh;
   padding:10px;
-  
+  width:80%;
+  position: fixed;
+  left:20%;
+  top: var(--distanceFromTop);
 }

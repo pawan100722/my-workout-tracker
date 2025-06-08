@@ -1,22 +1,21 @@
-import NavbarRoutes from '../routes/navbar-routes';
 import '../styles/navbar.css';
+import { Link } from 'react-router-dom';
 
 export const Navbar=()=>{
   return (
     <div className="navbar-main-container">
       <ul className="navbar-container">
         <li className="navbar-item">
-          <a href="/" className="navbar-link">
+          <Link to="/" className="navbar-link">
             Home
-          </a>
+          </Link>
         </li>
         <li className="navbar-item">
-          <a href="/history" className="navbar-link">
+          <Link to="/history" className="navbar-link">
             Workout History
-          </a>
+          </Link>
         </li>
       </ul>
-      <NavbarRoutes/>
     </div>
   );
 }

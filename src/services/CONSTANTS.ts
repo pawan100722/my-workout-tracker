@@ -14,4 +14,26 @@ export const CONSTANT = {
     reps: 10,
   },
   MY_WORKOUT:'my_workout',
+
+  WORKOUT_CATEGORIES:[
+    {
+      title:'Chest',
+      route:'/chest'
+    },
+    {
+      title:'Back',
+      route:'/back'
+    },{
+      title:'Shoulders',
+      route:'/shoulders'
+    },{
+      title:'Bicep',
+      route:'/bicep'
+    },{
+      title:'Tricep',
+      route:'/tricep'
+    },{
+      title:'Legs',
+      route:'/legs'
+    }],
 };

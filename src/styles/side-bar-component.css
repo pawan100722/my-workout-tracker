@@ -1,9 +1,10 @@
 .side-bar-container{
   background-color: black;
   position: fixed;
-  top: 20%;
+  top: var(--distanceFromTop);
+  left:0;
   width:20%;
-  height:80dvh;
+  height:85dvh;
   overflow:hidden;
 }
 

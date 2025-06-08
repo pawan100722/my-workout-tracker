@@ -14,3 +14,8 @@ export interface MyWorkoutDto {
   workoutSetsCount: number;
   reps:number
 }
+
+export interface WorkoutCategoryListDTO{
+  title:string;
+  route:string;
+}

@@ -1,0 +1,6 @@
+.workout-history-main-container{
+  width:100dvw;
+  min-height:90dvh;
+  position:fixed;
+  top: var(--distanceFromTop);
+}
