@@ -7,7 +7,7 @@ import { WorkoutCategory } from '../components/workout-category';
 
 export const CategoryPage = ({ selectedWorkoutCategoryProp='' }:CategoryPagePropsDTO) => {
 
-  const [data] = useState<WorkoutDataDto[]>(CONSTANT.data);
+  const [data] = useState<WorkoutDataDto>(CONSTANT.data);
   const [myWorkoutList, setMyWorkoutList] = useState<MyWorkoutDto[]>([
     CONSTANT.INITIAL_WORKOUT,
   ]);
@@ -15,6 +15,9 @@ export const CategoryPage = ({ selectedWorkoutCategoryProp='' }:CategoryPageProp
   const WorkoutCategoryTitle = selectedWorkoutCategoryProp?`${selectedWorkoutCategoryProp[0].toUpperCase()}${selectedWorkoutCategoryProp.slice(
     1
   )}`:'';
+
+  console.log();
+  
  
 
   return (
@@ -25,7 +28,7 @@ export const CategoryPage = ({ selectedWorkoutCategoryProp='' }:CategoryPageProp
             Choose <span>{WorkoutCategoryTitle}</span> Workout
           </h1>
           <WorkoutCategory
-            data={data}
+            data={data[selectedWorkoutCategoryProp as keyof WorkoutDataDto]}
             myWorkoutList={myWorkoutList}
             setMyWorkoutList={setMyWorkoutList}
           />

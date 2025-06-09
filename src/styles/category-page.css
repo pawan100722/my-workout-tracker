@@ -8,16 +8,17 @@
 
 .category-page-main-heading{
   color:white;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
+  font-style: italic;
 }
 
-.category-page-main-heading span{
+/* .category-page-main-heading span{
   display: inline-block;
   width: 210px;
   color: rgb(201, 197, 197);
   font-size: 3rem;
   font-style: italic;
   font-weight: bolder;
-}
+} */

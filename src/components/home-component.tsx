@@ -6,7 +6,7 @@ import { CategoryPage } from "../pages/category-page.tsx";
 export const HomeComponent = () => {
   
 
-  const workoutCategories=['chest','back','shoulders','tricep','bicep']
+  const workoutCategories=['pushup','chest','back','shoulders','tricep','bicep','legs']
   const [selectedWorkoutCategory, setSelectedWorkoutCategory] = useState<string>('');
 
   return (
@@ -14,19 +14,8 @@ export const HomeComponent = () => {
       <SideBarComponent
         workoutCategoryListProp={workoutCategories}
         setSelectedWorkoutProp={setSelectedWorkoutCategory}
-        // selectedWorkoutCategoryProp={selectedWorkoutCategory}
       />
-      {/* <WorkoutCategory
-        data={data}
-        myWorkoutList={myWorkoutList}
-        setMyWorkoutList={setMyWorkoutList}
-      /> */}
       <CategoryPage selectedWorkoutCategoryProp={selectedWorkoutCategory}/>
-
-      {/* <MyWorkout
-        myWorkoutList={myWorkoutList}
-        setMyWorkoutList={setMyWorkoutList}
-      /> */}
     </div>
   );
 };

@@ -1,7 +1,17 @@
 export interface WorkoutDataDto{
+  pushup:WorkoutDTO[],
+  chest:WorkoutDTO[],
+  back:WorkoutDTO[],
+  shoulders:WorkoutDTO[],
+  bicep:WorkoutDTO[],
+  tricep:WorkoutDTO[],
+  legs:WorkoutDTO[],
+}
+
+export interface WorkoutDTO {
   id: number;
   title: string;
-  image:string;
+  image: string;
 }
 
 export interface MyWorkoutDto {

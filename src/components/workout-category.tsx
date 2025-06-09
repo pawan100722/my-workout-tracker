@@ -1,6 +1,6 @@
 import "../styles/workout-category.css";
 import { CONSTANT } from "../services/CONSTANTS";
-import { WorkoutDataDto } from "../dtos/workout-dto";
+import { WorkoutDTO } from "../dtos/workout-dto";
 import { WorkoutCategoryPropsDTO } from "../dtos/component-dto";
 
 export const WorkoutCategory = ({
@@ -13,7 +13,7 @@ export const WorkoutCategory = ({
    * it add the new workout in the workout list
    * @param workoutParam
    */
-  const handleWorkoutCategoryClick = (workoutParam: WorkoutDataDto) => {
+  const handleWorkoutCategoryClick = (workoutParam: WorkoutDTO) => {
     const isWorkoutExist = myWorkoutList.find(
       (w) => w.workoutTitle === workoutParam?.title
     );
@@ -35,7 +35,7 @@ export const WorkoutCategory = ({
 
   return (
     <div className="workout-container">
-      {data.map((workout: WorkoutDataDto, index: number) => (
+      {data.map((workout: WorkoutDTO, index: number) => (
         <div
           className="each-workout-container"
           key={`${workout.id}-${index}`}

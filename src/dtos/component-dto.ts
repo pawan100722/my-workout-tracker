@@ -1,4 +1,4 @@
-import { MyWorkoutDto, WorkoutDataDto } from "./workout-dto";
+import { MyWorkoutDto, WorkoutDTO } from "./workout-dto";
 
 export interface MyWorkoutPropsDTO {
   myWorkoutList: MyWorkoutDto[];
@@ -7,7 +7,7 @@ export interface MyWorkoutPropsDTO {
 }
 
 export interface WorkoutCategoryPropsDTO {
-  data: WorkoutDataDto[];
+  data: WorkoutDTO[];
   myWorkoutList: MyWorkoutDto[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setMyWorkoutList: (param: any) => void;
