@@ -1,13 +1,16 @@
-import '../styles/my-workout.css';
+import "../styles/my-workout-list.css";
 import { MyWorkoutPropsDTO } from "../dtos/component-dto";
 import { MyWorkoutDto } from "../dtos/workout-dto";
-import { getLocallySavedData, saveDataLocally } from '../services/local-storage';
-import { CONSTANT } from '../services/CONSTANTS';
+import {
+  getLocallySavedData,
+  saveDataLocally,
+} from "../services/local-storage";
+import { CONSTANT } from "../services/CONSTANTS";
 
-export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO) => {
-  
-  
-  
+export const MyWorkoutList = ({
+  myWorkoutList,
+  setMyWorkoutList,
+}: MyWorkoutPropsDTO) => {
   /**
    * it increases or decreases the rep count for each workout
    * @param isIncreaseParam
@@ -31,7 +34,7 @@ export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO
   };
 
   /**
-   * it adds the reps to the current workout 
+   * it adds the reps to the current workout
    * it also increases the set
    * @param idParam
    */
@@ -49,34 +52,38 @@ export const MyWorkout = ({ myWorkoutList, setMyWorkoutList }: MyWorkoutPropsDTO
     }
   };
 
-
   /**
    * It saves workout data
    */
-  const saveData=()=>{
+  const saveData = () => {
     const dateArr = new Date().toString().split(" ").slice(0, 5);
     const key = `${dateArr[0]}, ${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`;
     //Here removing item at 0th index, as it will be the default initial object
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [item1, ...restData] = myWorkoutList;
     const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT);
-    if(!previousSavedData){
+    if (!previousSavedData) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const item: any = {};
       item[key] = [...restData];
       saveDataLocally(CONSTANT.MY_WORKOUT, item);
-    } else{
-      const updatedData = {...previousSavedData}
-      updatedData[key] =[...restData];
-      saveDataLocally(CONSTANT.MY_WORKOUT, updatedData)
+    } else {
+      const updatedData = { ...previousSavedData };
+      updatedData[key] = [...restData];
+      saveDataLocally(CONSTANT.MY_WORKOUT, updatedData);
     }
-    
-  }
+  };
 
   return (
     <div className="my-workout-container">
-      {myWorkoutList.map((myWorkout: MyWorkoutDto, index: number) => {
-        if (index > 0) {
+      {myWorkoutList?.map((myWorkout: MyWorkoutDto, index: number) => {
+        if (myWorkoutList.length === 1) {
+          return (
+            <div className="empty-workout-list-container">
+              <h1 key={index}>Start Workout to See Progress!!!</h1>
+            </div>
+          );
+        } else if (index > 0) {
           return (
             <div
               className="my-each-workout-container"

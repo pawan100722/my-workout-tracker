@@ -15,9 +15,14 @@ export interface WorkoutCategoryPropsDTO {
 
 export interface SideBarComponentPropsDTO {
   workoutCategoryListProp: string[];
-  setSelectedWorkoutProp:(param:string)=>void;
+  setSelectedWorkoutProp: (param: string) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setHasWorkoutProgressShownProp:(params:any)=>any;
 }
 
 export interface CategoryPagePropsDTO {
-  selectedWorkoutCategoryProp:string;
+  selectedWorkoutCategoryProp: string;
+  hasWorkoutProgressShownProp:boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setHasWorkoutProgressShownProp:(params:any)=>any;
 }

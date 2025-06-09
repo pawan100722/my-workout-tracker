@@ -128,3 +128,20 @@
   padding:8px;
   color:black;
 }
+
+.empty-workout-list-container{
+  width:100%;
+  height: 75dvh;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: var(--distanceFromTop);
+
+}
+
+.empty-workout-list-container h1{
+  color:white;
+  font-size: 4.5rem;
+  font-style: oblique;
+}

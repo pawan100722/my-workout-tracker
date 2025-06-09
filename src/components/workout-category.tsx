@@ -1,10 +1,10 @@
 import "../styles/workout-category.css";
 import { CONSTANT } from "../services/CONSTANTS";
-import { WorkoutDTO } from "../dtos/workout-dto";
+import {  WorkoutDTO } from "../dtos/workout-dto";
 import { WorkoutCategoryPropsDTO } from "../dtos/component-dto";
 
 export const WorkoutCategory = ({
-  data,
+  data = [],
   myWorkoutList,
   setMyWorkoutList,
 }: WorkoutCategoryPropsDTO) => {
