@@ -1,0 +1,23 @@
+.category-page-container{
+  width: 80%;
+  height:85dvh;
+  position:fixed;
+  left:20%;
+  top: var(--distanceFromTop)
+}
+
+.category-page-main-heading{
+  color:white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.category-page-main-heading span{
+  display: inline-block;
+  width: 210px;
+  color: rgb(201, 197, 197);
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bolder;
+}

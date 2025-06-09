@@ -1,23 +1,25 @@
-import { Link } from "react-router-dom";
+import { SideBarComponentPropsDTO } from "../dtos/component-dto";
 import "../styles/side-bar-component.css";
-import { CONSTANT } from "../services/CONSTANTS";
-import { WorkoutCategoryListDTO } from "../dtos/workout-dto";
 
-export const SideBarComponent = () => {
+export const SideBarComponent = ({
+  workoutCategoryListProp,
+  setSelectedWorkoutProp,
+}:SideBarComponentPropsDTO) => {
   return (
     <div className="side-bar-container">
-      <h1 className="sidebar-main-heading">Choose Workout</h1>
-      <ul className="sidebar-items-container">
-        {CONSTANT.WORKOUT_CATEGORIES.map(
-          (workout: WorkoutCategoryListDTO, index) => (
-            <li className="sidebar-item" key={index}>
-              <Link to={workout?.route} className="sidebar-link">
-                {workout?.title}
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
+      {/* <h1 className="sidebar-main-heading">Choose Workout</h1> */}
+      <div className="sidebar-items-container">
+        {workoutCategoryListProp?.map((catG: string, index: number) => (
+          <div
+            key={index}
+            className="sidebar-item"
+            onClick={() => setSelectedWorkoutProp(catG)}
+          >
+            {catG[0].toUpperCase()}
+            {catG.slice(1)}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
