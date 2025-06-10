@@ -5,6 +5,7 @@ import { WorkoutCategoryPropsDTO } from "../dtos/component-dto";
 
 export const WorkoutCategory = ({
   data = [],
+  handleShowWorkoutProgress,
   myWorkoutList,
   setMyWorkoutList,
 }: WorkoutCategoryPropsDTO) => {
@@ -31,6 +32,7 @@ export const WorkoutCategory = ({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setMyWorkoutList((prev: any) => [...prev, newWorkout]);
     }
+    handleShowWorkoutProgress();
   };
 
   return (

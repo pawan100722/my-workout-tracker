@@ -11,6 +11,7 @@ export const MyWorkoutList = ({
   myWorkoutList,
   setMyWorkoutList,
 }: MyWorkoutPropsDTO) => {
+
   /**
    * it increases or decreases the rep count for each workout
    * @param isIncreaseParam
@@ -73,6 +74,7 @@ export const MyWorkoutList = ({
       saveDataLocally(CONSTANT.MY_WORKOUT, updatedData);
     }
   };
+
 
   return (
     <div className="my-workout-container">

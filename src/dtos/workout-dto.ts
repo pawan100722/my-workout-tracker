@@ -22,7 +22,8 @@ export interface MyWorkoutDto {
   workoutImage: string;
   workoutRepsCount: number;
   workoutSetsCount: number;
-  reps:number
+  reps:number;
+  duration:number;
 }
 
 export interface WorkoutCategoryListDTO{

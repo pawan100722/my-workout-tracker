@@ -19,6 +19,7 @@ export const HomeComponent = () => {
   const [hasWorkoutProgressShown, setHasWorkoutProgressShown] =
     useState<boolean>(false);
 
+
   return (
     <div className="homepage-container right-page">
       <SideBarComponent

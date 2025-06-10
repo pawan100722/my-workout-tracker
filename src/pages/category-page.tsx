@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import '../styles/category-page.css';
-import { CONSTANT } from '../services/CONSTANTS';
-import { MyWorkoutDto, WorkoutDataDto } from '../dtos/workout-dto';
-import { CategoryPagePropsDTO } from '../dtos/component-dto';
-import { WorkoutCategory } from '../components/workout-category';
-import { MyWorkoutList } from '../components/my-workout';
+import { useState } from "react";
+import "../styles/category-page.css";
+import { CONSTANT } from "../services/CONSTANTS";
+import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto";
+import { CategoryPagePropsDTO } from "../dtos/component-dto";
+import { WorkoutCategory } from "../components/workout-category";
+import { MyWorkoutList } from "../components/my-workout-list.tsx";
 
 export const CategoryPage = ({
   selectedWorkoutCategoryProp = "",
@@ -22,31 +22,39 @@ export const CategoryPage = ({
       )}`
     : "";
 
-  const handleWorkoutProgress = () => {
+  /**
+   * it handles the functionality
+   * where is workout progress list is shown, it hides it or vice-versa
+   *
+   */
+  const handleShowWorkoutProgress = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    setHasWorkoutProgressShownProp((prev:any) => !prev);
+    setHasWorkoutProgressShownProp((prev: any) => !prev);
   };
 
   return (
     <div className="category-page-container">
-      <button className="workout-list-button" onClick={handleWorkoutProgress}>
+      <button
+        className="workout-list-button"
+        onClick={handleShowWorkoutProgress}
+        disabled={myWorkoutList.length===1}
+      >
         {!hasWorkoutProgressShownProp
           ? "Show Workout Progress"
           : "Hide Workout Progress"}
       </button>
-      {selectedWorkoutCategoryProp && (
+      {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
         <>
           <h1 className="category-page-main-heading">
             Choose <span>{WorkoutCategoryTitle}</span> Workout
           </h1>
+          <WorkoutCategory
+            data={data[selectedWorkoutCategoryProp as keyof WorkoutDataDto]}
+            handleShowWorkoutProgress={handleShowWorkoutProgress}
+            myWorkoutList={myWorkoutList}
+            setMyWorkoutList={setMyWorkoutList}
+          />
         </>
-      )}
-      {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
-        <WorkoutCategory
-          data={data[selectedWorkoutCategoryProp as keyof WorkoutDataDto]}
-          myWorkoutList={myWorkoutList}
-          setMyWorkoutList={setMyWorkoutList}
-        />
       ) : (
         <MyWorkoutList
           myWorkoutList={myWorkoutList}

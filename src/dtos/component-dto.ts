@@ -7,6 +7,7 @@ export interface MyWorkoutPropsDTO {
 }
 
 export interface WorkoutCategoryPropsDTO {
+  handleShowWorkoutProgress:()=>void;
   data: WorkoutDTO[];
   myWorkoutList: MyWorkoutDto[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
