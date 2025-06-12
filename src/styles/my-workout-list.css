@@ -43,8 +43,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 30px;
-  padding: 20px;
+  gap: 5px;
+  padding: 5px;
 }
 
 .my-each-workout-title {
@@ -103,6 +103,10 @@
   align-items: center;
   justify-content: center;
   /* gap: 10px; */
+}
+
+.each-workout-rep-buttons-container{
+  display: flex;
 }
 
 .each-workout-rep-detail {
