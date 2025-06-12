@@ -40,8 +40,8 @@ export const RightPanelMainPage = ({
         disabled={myWorkoutList.length===1}
       >
         {!hasWorkoutProgressShownProp
-          ? "Show Workout Progress"
-          : "Hide Workout Progress"}
+          ? "See Progress"
+          : "Hide Progress"}
       </button>
       {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
         <>

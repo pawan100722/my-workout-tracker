@@ -5,6 +5,9 @@
   left: 20%;
   top: var(--distanceFromTop);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
 }
 
 .category-page-main-heading {
@@ -16,10 +19,12 @@
 }
 
 .workout-list-button {
+  flex-shrink: 0;
+  width: 50%;
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
-  width: 200px;
+  /* width: 200px; */
   background-color: #530b0b;
   color: white;
   border: none;

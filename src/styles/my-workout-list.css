@@ -1,12 +1,12 @@
 /*Extra Classes*/
 .custom-button {
   margin: 10px;
-  width: 50px;
-  padding: 5px;
+  width: 35px;
+  padding: 10px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   transition: background-color 0.5s linear, color 0.5 linear;
 }
@@ -54,7 +54,7 @@
 }
 
 .my-each-workout-time-container {
-  width: 20%;
+  /* width: 20%; */
   height: 100px;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .my-each-workout-counts {
-  width: 20%;
+  /* width: 20%; */
   height: 100px;
   color: burlywood;
 }
@@ -101,8 +101,8 @@
 .each-workout-rep-container {
   display: flex;
   align-items: center;
-  /* width: 30%; */
-  gap: 10px;
+  justify-content: center;
+  /* gap: 10px; */
 }
 
 .each-workout-rep-detail {
@@ -137,7 +137,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: var(--distanceFromTop);
+  /* top: var(--distanceFromTop); */
 }
 
 .empty-workout-list-container h1 {
@@ -146,4 +146,47 @@
   font-style: oblique;
   text-align: center;
   color: #C0CA33;
+}
+
+
+@media(max-width:600px){
+  .my-each-workout-image{
+    width:70%;
+    height: 100px;
+    /* height:100px; */
+  }
+  
+  .my-each-workout-title{
+    width:100%;
+    font-size: 1.7rem;
+  }
+
+  .my-each-workout-time-container, .my-each-workout-counts{
+    display: none;
+  }
+
+  .my-each-workout-container{
+    width: 90%;
+  }
+
+  .each-workout-rep-container{
+    width: 100%;
+  }
+  
+  .empty-workout-list-container h1{
+    font-size: 2.5rem;
+  }
+}
+
+@media(min-width:600px) and (max-width:950px){
+  .my-each-workout-image{
+    width:50%;
+  }
+
+  .my-each-workout-title{
+    width:100%;
+    font-size: 2.1rem;
+  }
+
+  
 }
