@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/home-component.css";
 import { SideBarComponent } from "./sidebar-component.tsx";
-import { CategoryPage } from "../pages/category-page.tsx";
+import { RightPanelMainPage } from "../pages/right-panel-main-page.tsx";
 
 export const HomeComponent = () => {
   const workoutCategories = [
@@ -27,7 +27,7 @@ export const HomeComponent = () => {
         setSelectedWorkoutProp={setSelectedWorkoutCategory}
         setHasWorkoutProgressShownProp={setHasWorkoutProgressShown}
       />
-      <CategoryPage
+      <RightPanelMainPage
         selectedWorkoutCategoryProp={selectedWorkoutCategory}
         hasWorkoutProgressShownProp={hasWorkoutProgressShown}
         setHasWorkoutProgressShownProp={setHasWorkoutProgressShown}

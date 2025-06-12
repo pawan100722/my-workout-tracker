@@ -21,9 +21,9 @@ export interface SideBarComponentPropsDTO {
   setHasWorkoutProgressShownProp:(params:any)=>any;
 }
 
-export interface CategoryPagePropsDTO {
+export interface RightPanelMainPagePropsDTO {
   selectedWorkoutCategoryProp: string;
-  hasWorkoutProgressShownProp:boolean;
+  hasWorkoutProgressShownProp: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setHasWorkoutProgressShownProp:(params:any)=>any;
+  setHasWorkoutProgressShownProp: (params: any) => any;
 }

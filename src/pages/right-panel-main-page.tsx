@@ -1,16 +1,16 @@
 import { useState } from "react";
-import "../styles/category-page.css";
-import { CONSTANT } from "../services/CONSTANTS";
-import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto";
-import { CategoryPagePropsDTO } from "../dtos/component-dto";
-import { WorkoutCategory } from "../components/workout-category";
+import "../styles/right-panel-main-page.css";
+import { CONSTANT } from "../services/CONSTANTS.ts";
+import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto.ts";
+import { RightPanelMainPagePropsDTO } from "../dtos/component-dto.ts";
+import { WorkoutCategory } from "../components/workout-category.tsx";
 import { MyWorkoutList } from "../components/my-workout-list.tsx";
 
-export const CategoryPage = ({
+export const RightPanelMainPage = ({
   selectedWorkoutCategoryProp = "",
   hasWorkoutProgressShownProp,
   setHasWorkoutProgressShownProp,
-}: CategoryPagePropsDTO) => {
+}: RightPanelMainPagePropsDTO) => {
   const [data] = useState<WorkoutDataDto>(CONSTANT.data);
   const [myWorkoutList, setMyWorkoutList] = useState<MyWorkoutDto[]>([
     CONSTANT.INITIAL_WORKOUT,

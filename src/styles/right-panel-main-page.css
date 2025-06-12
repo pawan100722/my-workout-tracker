@@ -1,0 +1,58 @@
+.category-page-container {
+  width: 80%;
+  height: 85dvh;
+  position: fixed;
+  left: 20%;
+  top: var(--distanceFromTop);
+  overflow-y: auto;
+}
+
+.category-page-main-heading {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+}
+
+.workout-list-button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  background-color: #530b0b;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: gray;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  /* width: 100%; */
+  background-color: #530b0b;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+
+/* .category-page-main-heading span{
+  display: inline-block;
+  width: 210px;
+  color: rgb(201, 197, 197);
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bolder;
+} */
