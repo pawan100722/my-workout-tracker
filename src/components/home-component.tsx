@@ -2,17 +2,10 @@ import { useState } from "react";
 import "../styles/home-component.css";
 import { SideBarComponent } from "./sidebar-component.tsx";
 import { RightPanelMainPage } from "../pages/right-panel-main-page.tsx";
+import { CONSTANT } from "../services/CONSTANTS.ts";
 
 export const HomeComponent = () => {
-  const workoutCategories = [
-    "pushup",
-    "chest",
-    "back",
-    "shoulders",
-    "tricep",
-    "bicep",
-    "legs",
-  ];
+  
   const [selectedWorkoutCategory, setSelectedWorkoutCategory] =
     useState<string>("");
 
@@ -23,7 +16,7 @@ export const HomeComponent = () => {
   return (
     <div className="homepage-container right-page">
       <SideBarComponent
-        workoutCategoryListProp={workoutCategories}
+        workoutCategoryListProp={CONSTANT.WORKOUT_CATEGORIES}
         setSelectedWorkoutProp={setSelectedWorkoutCategory}
         setHasWorkoutProgressShownProp={setHasWorkoutProgressShown}
       />

@@ -1,6 +1,13 @@
 import { WORKOUT_DATA } from "../services/workout-data.ts";
 import defaultImage from "../images/default-workout.jpg";
 
+import backIcon from "../icons/muscle/back-muscle-icon.svg";
+import chestIcon from "../icons/muscle/chest-muscle-icon.svg";
+import bicepIcon from "../icons/muscle/bicep-muscle-icon.svg";
+import tricepIcon from "../icons/muscle/tricep-muscle-icon.svg";
+import shoulderIcon from "../icons/muscle/shoulder-muscle-icon.svg";
+import legsIcon from "../icons/muscle/leg-muscle-icon.svg";
+
 export const CONSTANT = {
   data: WORKOUT_DATA,
   INITIAL_WORKOUT: {
@@ -15,6 +22,25 @@ export const CONSTANT = {
     duration:0,
   },
   MY_WORKOUT:'my_workout',
+
+   WORKOUT_CATEGORIES : [
+      "pushup",
+      "chest",
+      "back",
+      "shoulders",
+      "tricep",
+      "bicep",
+      "legs",
+    ],
+
+  WORKOUT_ICONS_CATEGORIES : [
+      chestIcon,
+      backIcon,
+      shoulderIcon,
+      tricepIcon,
+      bicepIcon,
+      legsIcon,
+    ],
 
   // WORKOUT_CATEGORIES:[
   //   {

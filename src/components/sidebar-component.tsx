@@ -1,4 +1,5 @@
 import { SideBarComponentPropsDTO } from "../dtos/component-dto";
+import { CONSTANT } from "../services/CONSTANTS";
 import "../styles/side-bar-component.css";
 
 export const SideBarComponent = ({
@@ -21,10 +22,16 @@ export const SideBarComponent = ({
           <div
             key={index}
             className="sidebar-item"
-            onClick={()=>handleClick(catG)}
+            onClick={() => handleClick(catG)}
           >
-            {catG[0].toUpperCase()}
-            {catG.slice(1)}
+            <span>
+              {catG[0].toUpperCase()}
+              {catG.slice(1)}
+            </span>
+            <img
+              className="sidebar-icon"
+              src={CONSTANT.WORKOUT_ICONS_CATEGORIES[index]}
+            />
           </div>
         ))}
       </div>
