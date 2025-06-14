@@ -11,7 +11,7 @@ export const SideBarComponent = ({
   const handleClick=(categoryParam:string)=>{
     setSelectedWorkoutProp(categoryParam);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-    setHasWorkoutProgressShownProp((prev:any)=>false)
+    setHasWorkoutProgressShownProp(false)
   }
 
   return (
