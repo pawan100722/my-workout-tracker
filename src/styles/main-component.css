@@ -5,4 +5,28 @@
   --distanceFromTop: 15%;
 }
 
+.display-block{
+  display: block;
+}
+
+.display-none{
+  display: none;
+}
+
+.height-20{
+  height: 20%
+}
+
+.height-auto{
+  height:auto;
+}
+
+.height-15{
+  height:15%;
+}
+
+.opacity-1{
+  opacity:1
+}
+
 
