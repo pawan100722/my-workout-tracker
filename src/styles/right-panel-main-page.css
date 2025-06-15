@@ -10,18 +10,23 @@
   /* justify-content: space-between; */
 }
 
+.category-page-options{
+  margin: 20px 5px;
+}
+
 .category-page-main-heading {
   color: white;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
   font-style: italic;
+  margin: 50px 0;
 }
 
 .workout-list-button {
   flex-shrink: 0;
   width: 50%;
-  cursor: pointer;
+  /* cursor: pointer; */
   padding: 10px;
   border-radius: 10px;
   /* width: 200px; */
@@ -53,11 +58,8 @@
   opacity: 1;
 }
 
-/* .category-page-main-heading span{
-  display: inline-block;
-  width: 210px;
-  color: rgb(201, 197, 197);
-  font-size: 3rem;
-  font-style: italic;
-  font-weight: bolder;
-} */
+@media(max-width:600px){
+  .workout-list-button{
+    font-size: 0.8rem;
+  }
+}

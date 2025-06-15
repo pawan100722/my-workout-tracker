@@ -34,15 +34,17 @@ export const RightPanelMainPage = ({
 
   return (
     <div className="category-page-container">
-      <button
-        className="workout-list-button"
-        onClick={handleShowWorkoutProgress}
-        disabled={myWorkoutList.length===1}
-      >
-        {!hasWorkoutProgressShownProp
-          ? "See Progress"
-          : "Hide Progress"}
-      </button>
+      <div className="category-page-options">
+        <button
+          className={`workout-list-button ${
+            myWorkoutList.length === 1 ? "cursor-not-allowed" : "cursor-pointer"
+          }`}
+          onClick={handleShowWorkoutProgress}
+          disabled={myWorkoutList.length === 1}
+        >
+          {!hasWorkoutProgressShownProp ? "See Progress" : "Hide Progress"}
+        </button>
+      </div>
       {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
         <>
           <h1 className="category-page-main-heading">

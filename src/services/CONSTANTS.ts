@@ -1,6 +1,7 @@
 import { WORKOUT_DATA } from "../services/workout-data.ts";
 import defaultImage from "../images/default-workout.jpg";
 
+import pushupIcon from "../icons/muscle/pushup.svg";
 import backIcon from "../icons/muscle/back-muscle-icon.svg";
 import chestIcon from "../icons/muscle/chest-muscle-icon.svg";
 import bicepIcon from "../icons/muscle/bicep-muscle-icon.svg";
@@ -11,7 +12,7 @@ import legsIcon from "../icons/muscle/leg-muscle-icon.svg";
 export const CONSTANT = {
   data: WORKOUT_DATA,
   INITIAL_WORKOUT: {
-    id: "",
+    id: "01",
     workoutStartTime: new Date().toString().split(" ").slice(0, 5),
     workoutEndTime: new Date().toString().split(" ").slice(0, 5),
     workoutTitle: "Demo Workout",
@@ -19,28 +20,19 @@ export const CONSTANT = {
     workoutRepsCount: 0,
     workoutSetsCount: 0,
     reps: 10,
-    duration:0,
+    duration: 0,
   },
-  MY_WORKOUT:'my_workout',
+  MY_WORKOUT: "my_workout",
 
-   WORKOUT_CATEGORIES : [
-      "pushup",
-      "chest",
-      "back",
-      "shoulders",
-      "tricep",
-      "bicep",
-      "legs",
-    ],
-
-  WORKOUT_ICONS_CATEGORIES : [
-      chestIcon,
-      backIcon,
-      shoulderIcon,
-      tricepIcon,
-      bicepIcon,
-      legsIcon,
-    ],
+  WORKOUT_CATEGORIES: [
+    { title: "pushup", icon: pushupIcon },
+    { title: "chest", icon: chestIcon },
+    { title: "back", icon: backIcon },
+    { title: "shoulders", icon: shoulderIcon },
+    { title: "tricep", icon: tricepIcon },
+    { title: "bicep", icon: bicepIcon },
+    { title: "legs", icon: legsIcon },
+  ],
 
   // WORKOUT_CATEGORIES:[
   //   {

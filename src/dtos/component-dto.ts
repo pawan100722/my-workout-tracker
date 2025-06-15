@@ -15,10 +15,15 @@ export interface WorkoutCategoryPropsDTO {
 }
 
 export interface SideBarComponentPropsDTO {
-  workoutCategoryListProp: string[];
+  workoutCategoryListProp: WorkoutCategoryDTO[];
   setSelectedWorkoutProp: (param: string) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setHasWorkoutProgressShownProp:(params:any)=>any;
+}
+
+export interface WorkoutCategoryDTO {
+  title: string;
+  icon: string;
 }
 
 export interface RightPanelMainPagePropsDTO {
