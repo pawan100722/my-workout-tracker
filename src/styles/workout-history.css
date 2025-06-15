@@ -1,6 +1,49 @@
-.workout-history-main-container{
-  width:100dvw;
-  min-height:90dvh;
-  position:fixed;
+.workout-history-main-container {
+  width: 100dvw;
+  height: 90dvh;
+  position: fixed;
   top: var(--distanceFromTop);
+  background-image: url("../images/workout_history_background.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  /* height: 200dvh; */
+  overflow-y: auto;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+}
+
+.each-history-container {
+  min-height: 100px;
+  display: flex;
+  margin: 10px 5px;
+  border: 2px solid rgb(67, 45, 2);
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 2.5rem;
+  transition: min-height 0.3s linear, font-size 0.3s linear, opacity 0.3s linear,
+    background-color 0.5s linear , color 0.3s linear;
+  background-color: rgba(255, 206, 127, 0.5);
+}
+
+.each-history-container:hover {
+  min-height: 110px;
+  font-size: 2.7rem;
+  background-color: rgb(255, 206, 127, 0.7);
+  color:black;
+}
+
+.workout-history-main-heading{
+  display: block;
+  width:80dvw;
+  position: fixed;
+  left: 60px;
+  top:var(--distanceFromTop);
+  z-index: 10;
+  color:white;
+  text-align: center;
+  font-size: 1.8rem;
+  align-self: auto;
 }

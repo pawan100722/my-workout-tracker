@@ -62,16 +62,16 @@ export const MyWorkoutList = ({
     //Here removing item at 0th index, as it will be the default initial object
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [item1, ...restData] = myWorkoutList;
-    const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT);
+    const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT_DATA_KEY);
     if (!previousSavedData) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const item: any = {};
       item[key] = [...restData];
-      saveDataLocally(CONSTANT.MY_WORKOUT, item);
+      saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, item);
     } else {
       const updatedData = { ...previousSavedData };
       updatedData[key] = [...restData];
-      saveDataLocally(CONSTANT.MY_WORKOUT, updatedData);
+      saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, updatedData);
     }
   };
 

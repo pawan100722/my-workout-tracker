@@ -12,7 +12,7 @@ import legsIcon from "../icons/muscle/leg-muscle-icon.svg";
 export const CONSTANT = {
   data: WORKOUT_DATA,
   INITIAL_WORKOUT: {
-    id: "01",
+    id: "",
     workoutStartTime: new Date().toString().split(" ").slice(0, 5),
     workoutEndTime: new Date().toString().split(" ").slice(0, 5),
     workoutTitle: "Demo Workout",
@@ -22,7 +22,7 @@ export const CONSTANT = {
     reps: 10,
     duration: 0,
   },
-  MY_WORKOUT: "my_workout",
+  MY_WORKOUT_DATA_KEY: "my_workout",
 
   WORKOUT_CATEGORIES: [
     { title: "pushup", icon: pushupIcon },

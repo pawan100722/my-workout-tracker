@@ -7,7 +7,7 @@ export interface MyWorkoutPropsDTO {
 }
 
 export interface WorkoutCategoryPropsDTO {
-  handleShowWorkoutProgress:()=>void;
+  handleShowWorkoutProgress: () => void;
   data: WorkoutDTO[];
   myWorkoutList: MyWorkoutDto[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,7 +18,7 @@ export interface SideBarComponentPropsDTO {
   workoutCategoryListProp: WorkoutCategoryDTO[];
   setSelectedWorkoutProp: (param: string) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setHasWorkoutProgressShownProp:(params:any)=>any;
+  setHasWorkoutProgressShownProp: (params: any) => any;
 }
 
 export interface WorkoutCategoryDTO {
@@ -31,4 +31,12 @@ export interface RightPanelMainPagePropsDTO {
   hasWorkoutProgressShownProp: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setHasWorkoutProgressShownProp: (params: any) => any;
+}
+
+export interface HistoryComponentPropsDTO {
+  historyComponentDataProp: MyWorkoutDto[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  gotoPreviousPageProp: (params: any) => boolean | void;
+
+  setWorkoutDayProp: (param: string) => void;
 }
