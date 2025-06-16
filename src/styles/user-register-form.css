@@ -1,0 +1,73 @@
+.user-register-form-container{
+  width:100dvw;
+  height: 100dvh;
+  border:5px solid red;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-register-form{
+  width: 50%;
+  height: 60dvh;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.input-container{
+  display: block;
+  width: 80%;
+  margin:30px auto;
+}
+
+.input-label{
+  width: 20%;
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.input-area{
+  width: 70%;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-age-select{
+  font-size: 1rem;
+  outline:none;
+  border-radius: 10px;
+}
+
+.age-dropdown-option{
+}
+
+.input-age-select{
+  padding:3px;
+}
+
+.input-label-gender{
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.input-radio{
+  cursor: pointer;
+}
+
+.submit-button{
+  padding: 5px;
+  border-radius: 10px;
+  border:none;
+  outline:none;
+  transition: font-size 0.1s linear;
+}
+
+.submit-button:hover{
+  outline: 1px solid black;
+  font-size: 1.1rem;
+}
+
