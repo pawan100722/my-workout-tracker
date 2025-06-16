@@ -9,26 +9,27 @@ export const UserRegisterForm = () => {
 
   return (
     <div className="user-register-form-container">
+      <h1 className="user-register-form-heading">Enter Your Details</h1>
       <form action="" className="user-register-form">
         <div className="input-container">
           <label htmlFor="name" className="input-label">
             Name
           </label>
-          <input type="text" id="name" className="input-area" />
+          <input type="text" id="name" required className="input-area" />
         </div>
 
         <div className="input-container">
           <label htmlFor="email" className="input-label">
             Email
           </label>
-          <input type="email" className="input-area" id="email" />
+          <input type="email" required className="input-area" id="email" />
         </div>
 
         <div className="input-container">
           <label htmlFor="age-dropdown" className="input-label">
             Select Age
           </label>
-          <select name="" id="age-dropdown" className="input-age-select cursor-pointer">
+          <select name="" id="age-dropdown"  className="input-age-select cursor-pointer">
             {userAgeArr.map((age: number, index: number) => (
               <option value="" className="age-dropdown-option" key={index}>
                 {age}

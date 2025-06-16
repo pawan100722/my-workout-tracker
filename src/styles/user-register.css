@@ -1,0 +1,25 @@
+.user-register-container{
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #0d1321, #1d2d44,#3e5c76,#748cab,#f0ebd8);
+}
+
+.guest-button{
+  width: 50dvw;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  transition: transform 0.5s linear;
+  background: linear-gradient(to right, #a9def9, #ffbf69, #cbf3f0);
+  font-weight: bolder;
+  border: none;
+}
+
+.guest-button:hover{
+  transform: scale(0.9);
+}
