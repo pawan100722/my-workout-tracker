@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "../styles/user-register-form.css";
 
 export const UserRegisterForm = () => {
+  const [defaultAge, setDefaultAge] = useState<string>('20')
+  const handleSelectAgeClick=()=>{
+    setDefaultAge('');
+  };
+
   const userAgeArr = [];
 
   for (let index = 1; index <= 60; index++) {
@@ -29,13 +35,24 @@ export const UserRegisterForm = () => {
           <label htmlFor="age-dropdown" className="input-label">
             Select Age
           </label>
-          <select name="" id="age-dropdown"  className="input-age-select cursor-pointer">
+          <input
+            list="age-list"
+            className="age-input cursor-pointer"
+            id="age-dropdown"
+            value={defaultAge}
+            onClick={handleSelectAgeClick}
+          />
+          <datalist id="age-list" className="input-age-select">
             {userAgeArr.map((age: number, index: number) => (
-              <option value="" className="age-dropdown-option" key={index}>
+              <option
+                value={`${age}`}
+                className="age-dropdown-option"
+                key={index}
+              >
                 {age}
               </option>
             ))}
-          </select>
+          </datalist>
         </div>
 
         <div className="input-container">
@@ -45,18 +62,35 @@ export const UserRegisterForm = () => {
           <label htmlFor="male" className="input-label-gender">
             Male
           </label>
-          <input type="radio" id="male" name="gender" className="cursor-pointer" />
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            className="cursor-pointer"
+          />
           <label htmlFor="female" className="input-label-gender">
             Female
           </label>
-          <input type="radio" id="female" name="gender" className="cursor-pointer" />
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            className="cursor-pointer"
+          />
           <label htmlFor="other" className="input-label-gender">
             Other
           </label>
-          <input type="radio" id="other" name="gender" className="cursor-pointer" />
+          <input
+            type="radio"
+            id="other"
+            name="gender"
+            className="cursor-pointer"
+          />
         </div>
 
-        <button className="input-container submit-button cursor-pointer">Submit</button>
+        <button className="input-container submit-button cursor-pointer">
+          Submit
+        </button>
       </form>
     </div>
   );

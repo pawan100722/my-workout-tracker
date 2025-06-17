@@ -41,9 +41,6 @@
 }
 
 .input-age-select{
-  font-size: 1rem;
-  outline:none;
-  border-radius: 10px;
 }
 
 .age-dropdown-option{
@@ -78,6 +75,12 @@
   outline: 1px solid black;
   font-size: 1.1rem;
   opacity: 1;
+}
+
+.age-input{
+  width: 50px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 
