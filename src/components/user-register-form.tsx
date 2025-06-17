@@ -96,36 +96,38 @@ export const UserRegisterForm = ({ setIsUserRegistered }: UserRegisterFormPropsD
           <label htmlFor="" className="input-label">
             Select Gender
           </label>
-          <label htmlFor="male" className="input-label-gender">
-            Male
-          </label>
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            className="cursor-pointer"
-            defaultValue="male"
-          />
-          <label htmlFor="female" className="input-label-gender">
-            Female
-          </label>
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            defaultValue="female"
-            className="cursor-pointer"
-          />
-          <label htmlFor="other" className="input-label-gender">
-            Other
-          </label>
-          <input
-            type="radio"
-            id="other"
-            name="gender"
-            defaultValue="other"
-            className="cursor-pointer"
-          />
+          <div className="gender-options-container">
+            <label htmlFor="male" className="input-label-gender">
+              Male
+            </label>
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              className="cursor-pointer"
+              defaultValue="male"
+            />
+            <label htmlFor="female" className="input-label-gender">
+              Female
+            </label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              defaultValue="female"
+              className="cursor-pointer"
+            />
+            <label htmlFor="other" className="input-label-gender">
+              Other
+            </label>
+            <input
+              type="radio"
+              id="other"
+              name="gender"
+              defaultValue="other"
+              className="cursor-pointer"
+            />
+          </div>
         </div>
 
         <button className="input-container submit-button cursor-pointer">

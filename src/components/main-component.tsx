@@ -6,17 +6,22 @@ import { UserRegister } from './user-register.tsx';
 
 export const MainComponent=()=>{
   const [isUserRegistered,setIsUserRegistered ] = useState<boolean>(false);
+  const [isGuestLogin, setIsGuestLogin] = useState<boolean>(false);
+
 
 
   return (
     <div className="main-component-container">
-      {isUserRegistered ? (
+      {isUserRegistered || isGuestLogin ? (
         <>
           <Navbar />
           <CustomRoutes />
         </>
       ) : (
-        <UserRegister setIsUserRegistered={setIsUserRegistered} />
+        <UserRegister
+          setIsUserRegistered={setIsUserRegistered}
+          setIsGuestLogin={setIsGuestLogin}
+        />
       )}
     </div>
   );

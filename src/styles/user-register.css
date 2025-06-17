@@ -14,12 +14,13 @@
   height: 40px;
   border-radius: 10px;
   outline: none;
-  transition: transform 0.5s linear;
+  transition: transform 0.3s linear;
   background: linear-gradient(to right, #a9def9, #ffbf69, #cbf3f0);
-  font-weight: bolder;
+  /* font-weight: bold; */
   border: none;
 }
 
 .guest-button:hover{
   transform: scale(0.9);
 }
+

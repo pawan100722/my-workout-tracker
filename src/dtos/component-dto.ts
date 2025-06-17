@@ -46,4 +46,5 @@ export interface UserRegisterFormPropsDTO {
 }
 export interface UserRegisterPropsDTO {
   setIsUserRegistered: (params: boolean) => void;
+  setIsGuestLogin:(params:boolean)=>void;
 }
