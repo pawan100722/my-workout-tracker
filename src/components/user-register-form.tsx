@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "../styles/user-register-form.css";
 
 export const UserRegisterForm = () => {
-  const [defaultAge, setDefaultAge] = useState<string>('20')
-  const handleSelectAgeClick=()=>{
-    setDefaultAge('');
+  const [defaultAge, setDefaultAge] = useState<string>("20");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSelectAgeClick = () => {
+    setDefaultAge("");
+  };
+
+  const handleFormSubmit = (eParam: React.FormEvent<HTMLFormElement>) => {
+    eParam.preventDefault();
+    if (formRef?.current) {
+      const formData = new FormData(formRef?.current);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const extractedFormdata :Record<string, any>={};
+      for (const [key,value] of formData) {
+        extractedFormdata[key]=value
+      }
+      console.log('form data:::', extractedFormdata)
+    }
   };
 
   const userAgeArr = [];
@@ -16,19 +31,36 @@ export const UserRegisterForm = () => {
   return (
     <div className="user-register-form-container">
       <h1 className="user-register-form-heading">Enter Your Details</h1>
-      <form action="" className="user-register-form">
+      <form
+        action=""
+        className="user-register-form"
+        ref={formRef}
+        onSubmit={handleFormSubmit}
+      >
         <div className="input-container">
           <label htmlFor="name" className="input-label">
             Name
           </label>
-          <input type="text" id="name" required className="input-area" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            className="input-area"
+          />
         </div>
 
         <div className="input-container">
           <label htmlFor="email" className="input-label">
             Email
           </label>
-          <input type="email" required className="input-area" id="email" />
+          <input
+            type="email"
+            name="email"
+            required
+            className="input-area"
+            id="email"
+          />
         </div>
 
         <div className="input-container">
@@ -39,7 +71,8 @@ export const UserRegisterForm = () => {
             list="age-list"
             className="age-input cursor-pointer"
             id="age-dropdown"
-            value={defaultAge}
+            name="age"
+            defaultValue={defaultAge}
             onClick={handleSelectAgeClick}
           />
           <datalist id="age-list" className="input-age-select">
@@ -67,6 +100,7 @@ export const UserRegisterForm = () => {
             id="male"
             name="gender"
             className="cursor-pointer"
+            defaultValue="male"
           />
           <label htmlFor="female" className="input-label-gender">
             Female
@@ -75,6 +109,7 @@ export const UserRegisterForm = () => {
             type="radio"
             id="female"
             name="gender"
+            defaultValue="female"
             className="cursor-pointer"
           />
           <label htmlFor="other" className="input-label-gender">
@@ -84,6 +119,7 @@ export const UserRegisterForm = () => {
             type="radio"
             id="other"
             name="gender"
+            defaultValue="other"
             className="cursor-pointer"
           />
         </div>
