@@ -22,7 +22,8 @@ export const CONSTANT = {
     reps: 10,
     duration: 0,
   },
-  MY_WORKOUT_DATA_KEY: "my_workout",
+  MY_WORKOUT_DATA_KEY: "my_workout_tracker_history",
+  USER_DETAILS_KEY: "my_workout_tracker_user_details",
 
   WORKOUT_CATEGORIES: [
     { title: "pushup", icon: pushupIcon },
@@ -33,26 +34,4 @@ export const CONSTANT = {
     { title: "bicep", icon: bicepIcon },
     { title: "legs", icon: legsIcon },
   ],
-
-  // WORKOUT_CATEGORIES:[
-  //   {
-  //     title:'Chest',
-  //     route:'/chest'
-  //   },
-  //   {
-  //     title:'Back',
-  //     route:'/back'
-  //   },{
-  //     title:'Shoulders',
-  //     route:'/shoulders'
-  //   },{
-  //     title:'Bicep',
-  //     route:'/bicep'
-  //   },{
-  //     title:'Tricep',
-  //     route:'/tricep'
-  //   },{
-  //     title:'Legs',
-  //     route:'/legs'
-  //   }],
 };

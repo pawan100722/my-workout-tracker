@@ -5,7 +5,8 @@ import { useState } from 'react';
 import { UserRegister } from './user-register.tsx';
 
 export const MainComponent=()=>{
-  const [isUserRegistered, ] = useState<boolean>(false);
+  const [isUserRegistered,setIsUserRegistered ] = useState<boolean>(false);
+
 
   return (
     <div className="main-component-container">
@@ -15,7 +16,7 @@ export const MainComponent=()=>{
           <CustomRoutes />
         </>
       ) : (
-        <UserRegister />
+        <UserRegister setIsUserRegistered={setIsUserRegistered} />
       )}
     </div>
   );

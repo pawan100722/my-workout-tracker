@@ -40,3 +40,10 @@ export interface HistoryComponentPropsDTO {
 
   setWorkoutDayProp: (param: string) => void;
 }
+
+export interface UserRegisterFormPropsDTO {
+  setIsUserRegistered:(params:boolean)=>void;
+}
+export interface UserRegisterPropsDTO {
+  setIsUserRegistered: (params: boolean) => void;
+}

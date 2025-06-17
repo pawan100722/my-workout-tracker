@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
 import "../styles/user-register-form.css";
+import { UserRegisterFormPropsDTO } from "../dtos/component-dto";
+import { saveDataLocally } from "../services/local-storage";
+import { CONSTANT } from "../services/CONSTANTS";
 
-export const UserRegisterForm = () => {
+export const UserRegisterForm = ({ setIsUserRegistered }: UserRegisterFormPropsDTO) => {
   const [defaultAge, setDefaultAge] = useState<string>("20");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -14,11 +17,12 @@ export const UserRegisterForm = () => {
     if (formRef?.current) {
       const formData = new FormData(formRef?.current);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const extractedFormdata :Record<string, any>={};
-      for (const [key,value] of formData) {
-        extractedFormdata[key]=value
+      const extractedFormdata: Record<string, any> = {};
+      for (const [key, value] of formData) {
+        extractedFormdata[key] = value;
       }
-      console.log('form data:::', extractedFormdata)
+      saveDataLocally(CONSTANT.USER_DETAILS_KEY, extractedFormdata)
+      setIsUserRegistered(true);
     }
   };
 
