@@ -23,8 +23,24 @@ import dumbellOverHeadPressImg from "../images/workout/shoulder/dumbbell-standin
 import dumbellLateralRaiseImg from "../images/workout/shoulder/dumbell-lateral-raise.jpeg";
 import dumbellUpRightRowImg from "../images/workout/shoulder/dumbell-upright-row.webp";
 
-import bodyWeightSquatImg from "../images/workout/bodyweight-squat.png";
-import dumbellBicepCurlImg from "../images/workout/dumbell-bicep-curl.webp";
+import dumbellBicepCurlImg from "../images/workout/bicep/dumbell-bicep-curl.webp";
+import dumbellConcentrationCurlImg from "../images/workout/bicep/concentration-curls.jpg";
+import dumbellReverseCurlImg from "../images/workout/bicep/dumbbell-reverse-curl.webp";
+import dumbellHammerCurlImg from "../images/workout/bicep/dumbell-hammer-curl.webp";
+import dumbellPeacherCurlImg from "../images/workout/bicep/dumbbell-preacher-curl.jpg";
+
+import dumbellStandingKickBacksImg from '../images/workout/tricep/dumbbell-standing-kickback.webp'
+import dumbellOverHeadTricepExtensionImg from '../images/workout/tricep/dumbell-overhead-tricep-extension.png'
+import dumbellSingleArmKickBacksImg from '../images/workout/tricep/dumbell-single-arm-kick-backs.jpeg'
+import dumbellSingleArmOverHeadExtensionImg from '../images/workout/tricep/dumbell-single-arm-overhead-tricep-extension.jpeg'
+import tricepDipsImg from '../images/workout/tricep/tricep-dips.webp'
+
+import bodyWeightSquatImg from "../images/workout/legs/bodyweight-squat.png";
+import bulgarianSplitImg from "../images/workout/legs/bulgarian-split-squats.jpeg";
+import CalfRaiseImg from "../images/workout/legs/calf-raise.jpg";
+import gluteBridgesImg from "../images/workout/legs/glute-bridges.jpeg";
+import lungesImg from "../images/workout/legs/lunges.jpeg";
+import sumoSquatImg from "../images/workout/legs/sumo-squats.jpg";
 
 export const WORKOUT_DATA = {
   pushup: [
@@ -115,39 +131,110 @@ export const WORKOUT_DATA = {
       image: dumbellFrontRaiseImg,
     },
     {
-      id: 1,
+      id: 2,
       title: "Dumbell Over Head Press",
       image: dumbellOverHeadPressImg,
     },
     {
-      id: 1,
+      id: 3,
       title: "Dumbell Lateral Raise",
       image: dumbellLateralRaiseImg,
     },
     {
-      id: 1,
+      id: 4,
       title: "Dumbell Shrugs",
       image: dumbellShrugsImg,
     },
     {
-      id: 1,
+      id: 5,
       title: "Dumbell Upright Row",
       image: dumbellUpRightRowImg,
     },
   ],
   bicep: [
     {
-      id: 5,
+      id: 1,
       title: "Dumbell Bicep Curl",
       image: dumbellBicepCurlImg,
     },
-  ],
-  tricep: [],
-  legs: [
     {
       id: 2,
+      title: "Dumbell Concentration Curl",
+      image: dumbellConcentrationCurlImg,
+    },
+    {
+      id: 3,
+      title: "Dumbell Reverse Curl",
+      image: dumbellReverseCurlImg,
+    },
+    {
+      id: 4,
+      title: "Dumbell Hammer Curl",
+      image: dumbellHammerCurlImg,
+    },
+    {
+      id: 5,
+      title: "Dumbell Peacher Curl",
+      image: dumbellPeacherCurlImg,
+    },
+  ],
+  tricep: [
+    {
+      id: 1,
+      title: "Tricep Dips",
+      image: tricepDipsImg,
+    },
+    {
+      id: 2,
+      title: "Dumbell Single Arm Overhead Extension",
+      image: dumbellSingleArmOverHeadExtensionImg,
+    },
+    {
+      id: 3,
+      title: "Dumbell Single Arm Kickbacks",
+      image: dumbellSingleArmKickBacksImg,
+    },
+    {
+      id: 4,
+      title: "Dumbell Overhead Tricep Extension",
+      image: dumbellOverHeadTricepExtensionImg,
+    },
+    {
+      id: 5,
+      title: "Dumbell Standing Kickbacks",
+      image: dumbellStandingKickBacksImg,
+    },
+  ],
+  legs: [
+    {
+      id: 1,
       title: "Squat",
       image: bodyWeightSquatImg,
+    },
+    {
+      id: 2,
+      title: "Bulgarian Split",
+      image: bulgarianSplitImg,
+    },
+    {
+      id: 3,
+      title: "Sumo Squat",
+      image: sumoSquatImg,
+    },
+    {
+      id: 4,
+      title: "Lunges",
+      image: lungesImg,
+    },
+    {
+      id: 5,
+      title: "Glute Bridges",
+      image: gluteBridgesImg,
+    },
+    {
+      id: 6,
+      title: "Calf Raise",
+      image: CalfRaiseImg,
     },
   ],
 };
