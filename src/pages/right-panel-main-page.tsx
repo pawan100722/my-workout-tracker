@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/right-panel-main-page.css";
+import deleteIcon from '../icons/delete-icon.svg';
 import { CONSTANT } from "../services/CONSTANTS.ts";
 import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto.ts";
 import { RightPanelMainPagePropsDTO } from "../dtos/component-dto.ts";
@@ -44,6 +45,7 @@ export const RightPanelMainPage = ({
         >
           {!hasWorkoutProgressShownProp ? "See Progress" : "Hide Progress"}
         </button>
+        <button className="app-reset-button cursor-pointer" title="Reset App Data!"><img src={deleteIcon}/></button>
       </div>
       {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
         <>

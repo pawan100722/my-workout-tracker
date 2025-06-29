@@ -39,7 +39,7 @@ export const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <div className="navbar-user-details">
+      <div className={`navbar-user-details ${isMenuIconClicked? 'display-none':'display-block'}`}>
         <p>
           Welcome,<span>{isGuestLogin?'Guest':userData?.name}</span>
         </p>
