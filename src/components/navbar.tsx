@@ -1,24 +1,19 @@
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
-import { useState } from "react";
-import closeIcon from '../icons/close-icon.svg';
+import { useContext, useState } from "react";
+import closeIcon from "../icons/close-icon.svg";
 import hamburgerIcon from "../icons/hamburger.svg";
+import { UserDetailsContext } from "../services/contexts";
+import { UserDetailsContextDTO } from "../dtos/common-dtos";
 
 export const Navbar = () => {
   const [isMenuIconClicked, setIsMenuIconClicked] = useState<boolean>();
+  const userDetailsContext: UserDetailsContextDTO = useContext(UserDetailsContext);
+  const {userData, isGuestLogin} = userDetailsContext;
 
   const handleMenuIconClick = () => {
     setIsMenuIconClicked((prev) => !prev);
-    
   };
-
-  // useEffect(()=>{
-  //   if (isMenuIconClicked) {
-  //     setTimeout(() => {
-  //       setIsMenuIconClicked(() => false);
-  //     }, 2500);
-  //   }
-  // },[isMenuIconClicked])
 
   const handleMenuSelect = () => {
     setIsMenuIconClicked(() => false);
@@ -44,8 +39,13 @@ export const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <div className="navbar-user-details">
+        <p>
+          Welcome,<span>{isGuestLogin?'Guest':userData?.name}</span>
+        </p>
+      </div>
       <img
-        src={isMenuIconClicked?closeIcon:hamburgerIcon}
+        src={isMenuIconClicked ? closeIcon : hamburgerIcon}
         className="navbar-icon"
         alt="Navbar Icon"
         onClick={handleMenuIconClick}
