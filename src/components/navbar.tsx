@@ -1,16 +1,29 @@
-import { Link } from 'react-router-dom';
-import '../styles/navbar.css';
-import hamburgerIcon from '../icons/hamburger.svg';
-import {  useState } from 'react';
+import { Link } from "react-router-dom";
+import "../styles/navbar.css";
+import { useState } from "react";
+import closeIcon from '../icons/close-icon.svg';
+import hamburgerIcon from "../icons/hamburger.svg";
 
-export const Navbar=()=>{
+export const Navbar = () => {
   const [isMenuIconClicked, setIsMenuIconClicked] = useState<boolean>();
 
-  const handleMenuIconClick=()=>{
-  setIsMenuIconClicked(prev=>!prev);
+  const handleMenuIconClick = () => {
+    setIsMenuIconClicked((prev) => !prev);
+    
   };
 
-  
+  // useEffect(()=>{
+  //   if (isMenuIconClicked) {
+  //     setTimeout(() => {
+  //       setIsMenuIconClicked(() => false);
+  //     }, 2500);
+  //   }
+  // },[isMenuIconClicked])
+
+  const handleMenuSelect = () => {
+    setIsMenuIconClicked(() => false);
+  };
+
   return (
     <div
       className={`navbar-main-container ${
@@ -18,31 +31,25 @@ export const Navbar=()=>{
       }`}
     >
       <ul
-        className={`navbar-container  ${
-          isMenuIconClicked ? "opacity-1" : ""
-        }`}
-        // style={{
-        //   height: "15%",
-        //   transition: "height 1s linear",
-        // }}
+        className={`navbar-container  ${isMenuIconClicked ? "opacity-1" : ""}`}
       >
-        <li className="navbar-item">
+        <li className="navbar-item" onClick={handleMenuSelect}>
           <Link to="/" className="navbar-link">
             Home
           </Link>
         </li>
-        <li className="navbar-item">
+        <li className="navbar-item" onClick={handleMenuSelect}>
           <Link to="/history" className="navbar-link">
             Workout History
           </Link>
         </li>
       </ul>
       <img
-        src={hamburgerIcon}
+        src={isMenuIconClicked?closeIcon:hamburgerIcon}
         className="navbar-icon"
         alt="Navbar Icon"
         onClick={handleMenuIconClick}
       />
     </div>
   );
-}
+};

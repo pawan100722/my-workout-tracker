@@ -39,7 +39,7 @@ export const WorkoutHistory = () => {
             setWorkoutDayProp={setWorkoutDay}
           />
         ) : (
-          Object.keys(historyData)?.map((date: string, index: number) => (
+          historyData ? Object.keys(historyData)?.map((date: string, index: number) => (
             <div
               onClick={() => handleClick(date)}
               key={index}
@@ -47,7 +47,7 @@ export const WorkoutHistory = () => {
             >
               {date}
             </div>
-          ))
+          )):(<p className="empty-history-text">No Workout History Found, Start Working out today!!!</p>)
         )}
       </div>
     </>
