@@ -8,3 +8,8 @@ export function getLocallySavedData(keyParam: string) {
   const data: any = localStorage.getItem(keyParam);
   return data && data!=='undefined' ? JSON.parse(data) : null;
 }
+
+
+export function clearLocallySavedData(keyParam:string){
+  localStorage.removeItem(keyParam);
+}

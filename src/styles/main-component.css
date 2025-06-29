@@ -25,6 +25,10 @@
   height:15%;
 }
 
+.opacity-none{
+  opacity: 0;
+}
+
 .opacity-1{
   opacity:1
 }
@@ -36,5 +40,17 @@
 .cursor-pointer{
   cursor:pointer;
 }
+
+.position-absolute{
+  position: absolute;
+  inset: 100px 0 0 0;
+  z-index: 10;
+}
+
+.position-absolute-negative{
+  position:absolute;
+  z-index: -10;
+}
+
 
 

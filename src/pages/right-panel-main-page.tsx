@@ -6,6 +6,7 @@ import { MyWorkoutDto, WorkoutDataDto } from "../dtos/workout-dto.ts";
 import { RightPanelMainPagePropsDTO } from "../dtos/component-dto.ts";
 import { WorkoutCategory } from "../components/workout-category.tsx";
 import { MyWorkoutList } from "../components/my-workout-list.tsx";
+import { clearLocallySavedData } from "../services/local-storage.ts";
 
 export const RightPanelMainPage = ({
   selectedWorkoutCategoryProp = "",
@@ -16,6 +17,8 @@ export const RightPanelMainPage = ({
   const [myWorkoutList, setMyWorkoutList] = useState<MyWorkoutDto[]>([
     CONSTANT.INITIAL_WORKOUT,
   ]);
+
+  const [isResetButtonClicked, setIsResetButtonClicked]= useState<boolean>(false);
 
   const WorkoutCategoryTitle = selectedWorkoutCategoryProp
     ? `${selectedWorkoutCategoryProp[0].toUpperCase()}${selectedWorkoutCategoryProp.slice(
@@ -33,6 +36,20 @@ export const RightPanelMainPage = ({
     setHasWorkoutProgressShownProp((prev: any) => !prev);
   };
 
+  const handleResetClick=()=>{
+    setIsResetButtonClicked(()=>true);
+  };
+
+  const handleCancelResetClick=()=>{
+    setIsResetButtonClicked(()=>false)
+  };
+
+  const handleResetConfirmClick=()=>{
+    clearLocallySavedData(CONSTANT.USER_DETAILS_KEY);
+    clearLocallySavedData(CONSTANT.USER_DETAILS_KEY);
+    setIsResetButtonClicked(()=>false)
+  }
+
   return (
     <div className="category-page-container">
       <div className="category-page-options">
@@ -45,19 +62,51 @@ export const RightPanelMainPage = ({
         >
           {!hasWorkoutProgressShownProp ? "See Progress" : "Hide Progress"}
         </button>
-        <button className="app-reset-button cursor-pointer" title="Reset App Data!"><img src={deleteIcon}/></button>
+        <button
+          className="app-reset-button cursor-pointer"
+          title="Reset App Data!"
+        >
+          <img src={deleteIcon} onClick={handleResetClick} />
+        </button>
+      </div>
+      <div
+        className={`reset-app-warning-container cursor-pointer ${
+          isResetButtonClicked ? "opacity-1 position-absolute" : "opacity-none position-absolute-negative"
+        }`}
+      >
+        <span onClick={handleCancelResetClick}>&times;</span>
+        <h2 className="warning-text">
+          Are you Sure You want to reset the App? You will loose your data. This
+          can not be undone
+        </h2>
+        <div className="warning-buttons-container">
+          <button
+            className=" warning-button cursor-pointer warning-confirm-button"
+            onClick={handleResetConfirmClick}
+          >
+            Confirm
+          </button>
+          <button
+            className="warning-button cursor-pointer warning-cancel-button"
+            onClick={handleCancelResetClick}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
       {selectedWorkoutCategoryProp && !hasWorkoutProgressShownProp ? (
         <>
           <h1 className="category-page-main-heading">
             Choose <span>{WorkoutCategoryTitle}</span> Workout
           </h1>
-          <WorkoutCategory
-            data={data[selectedWorkoutCategoryProp as keyof WorkoutDataDto]}
-            handleShowWorkoutProgress={handleShowWorkoutProgress}
-            myWorkoutList={myWorkoutList}
-            setMyWorkoutList={setMyWorkoutList}
-          />
+          <div>
+            <WorkoutCategory
+              data={data[selectedWorkoutCategoryProp as keyof WorkoutDataDto]}
+              handleShowWorkoutProgress={handleShowWorkoutProgress}
+              myWorkoutList={myWorkoutList}
+              setMyWorkoutList={setMyWorkoutList}
+            />
+          </div>
         </>
       ) : (
         <MyWorkoutList

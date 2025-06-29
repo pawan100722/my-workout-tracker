@@ -6,11 +6,15 @@ import {
   saveDataLocally,
 } from "../services/local-storage";
 import { CONSTANT } from "../services/CONSTANTS";
+import { useContext } from "react";
+import { UserDetailsContext } from "../services/contexts";
 
 export const MyWorkoutList = ({
   myWorkoutList,
   setMyWorkoutList,
 }: MyWorkoutPropsDTO) => {
+
+  const userDetailsContextData = useContext(UserDetailsContext);
 
   /**
    * it increases or decreases the rep count for each workout
@@ -63,15 +67,17 @@ export const MyWorkoutList = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [item1, ...restData] = myWorkoutList;
     const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT_DATA_KEY);
-    if (!previousSavedData) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const item: any = {};
-      item[key] = [...restData];
-      saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, item);
-    } else {
-      const updatedData = { ...previousSavedData };
-      updatedData[key] = [...restData];
-      saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, updatedData);
+    if(!userDetailsContextData.isGuestLogin){
+      if (!previousSavedData) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const item: any = {};
+        item[key] = [...restData];
+        saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, item);
+      } else {
+        const updatedData = { ...previousSavedData };
+        updatedData[key] = [...restData];
+        saveDataLocally(CONSTANT.MY_WORKOUT_DATA_KEY, updatedData);
+      }
     }
   };
 

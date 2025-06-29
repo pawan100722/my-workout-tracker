@@ -7,6 +7,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  z-index: 999;
   /* justify-content: space-between; */
 }
 
@@ -60,6 +61,58 @@
   width: 30px;
 }
 
+.reset-app-warning-container{
+  /* background-color: red; */
+  background-color: rgb(0, 0, 0,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-app-warning-container span{
+  color: white;
+  font-size: 5rem;
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  /* z-index: 111; */
+}
+
+.warning-buttons-container{
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  margin: 50px 0;
+}
+
+.warning-text{
+  width: 80%;
+  text-align: center;
+  color: white;
+}
+
+.warning-button{
+  width: 100px;
+  padding:10px;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.1s ease;
+  font-size: 1rem;
+}
+
+.warning-button:active{
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+.warning-confirm-button{
+  background-color: red;
+}
+
+.warning-cancel-button{
+  background-color: green;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -85,5 +138,9 @@
 @media(max-width:600px){
   .workout-list-button{
     font-size: 0.8rem;
+  }
+
+  .warning-buttons-container{
+    width: 80%;
   }
 }
