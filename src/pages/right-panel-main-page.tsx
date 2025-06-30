@@ -47,7 +47,8 @@ export const RightPanelMainPage = ({
   const handleResetConfirmClick=()=>{
     clearLocallySavedData(CONSTANT.USER_DETAILS_KEY);
     clearLocallySavedData(CONSTANT.USER_DETAILS_KEY);
-    setIsResetButtonClicked(()=>false)
+    setIsResetButtonClicked(()=>false);
+    window.location.reload();
   }
 
   return (

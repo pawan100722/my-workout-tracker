@@ -171,9 +171,16 @@
     /* height:100px; */
   }
 
+  .each-workout-rep-add{
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
   .my-each-workout-title {
     /* width:100%; */
-    font-size: 1.2rem;
+    width: auto;
+    font-size: 1.1rem;
+    margin: 5px;
   }
 
   .my-each-workout-time-container,
