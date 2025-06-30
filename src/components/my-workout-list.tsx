@@ -65,7 +65,7 @@ export const MyWorkoutList = ({
     const key = `${dateArr[0]}, ${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`;
     //Here removing item at 0th index, as it will be the default initial object
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [item1, ...restData] = myWorkoutList;
+    const [, ...restData] = myWorkoutList;
     const previousSavedData = getLocallySavedData(CONSTANT.MY_WORKOUT_DATA_KEY);
     if(!userDetailsContextData.isGuestLogin){
       if (!previousSavedData) {

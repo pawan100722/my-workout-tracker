@@ -12,6 +12,10 @@
 }
 
 .category-page-options{
+  /* position: fixed;
+  top: 95px;
+  width: 100%; */
+  background-color: rgb(0, 0, 0,0.8);
   display: flex;
   justify-content: flex-start;
   align-items: center;
